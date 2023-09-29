@@ -8,6 +8,16 @@
 // update and say "Log out". If a user clicks on the button again, its text
 // should switch from "Log Out" to "Log In".
 
+function toggleLogin() {
+    document.querySelector
+
+    if (loginButton.innerHTML === 'Log In') {
+        loginButton.innerHTML = 'Log Out'
+    } else {
+        loginButton.innerHTML = "Log In"
+    }
+}
+
 /// TODO: replace this with your code
 
 // Send an alert
@@ -17,6 +27,8 @@
 // A user should be able to enter what they want the alert to say in the
 // text box. Then, they can submit the form to trigger the alert.
 
+
+alert("Hello! This is an alert");
 /// TODO: replace this with your code
 
 // Add an item
