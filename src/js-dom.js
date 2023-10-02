@@ -8,15 +8,14 @@
 // update and say "Log out". If a user clicks on the button again, its text
 // should switch from "Log Out" to "Log In".
 
-function toggleLogin() {
-    document.querySelector
-
-    if (loginButton.innerHTML === 'Log In') {
-        loginButton.innerHTML = 'Log Out'
+const authButton = document.querySelector('#auth');
+authButton.addEventListener('click', function() {
+    if (authButton.textContent === 'Log In') {
+        authButton.textContent = 'Log Out';
     } else {
-        loginButton.innerHTML = "Log In"
+        authButton.textContent = 'Log In';
     }
-}
+});
 
 /// TODO: replace this with your code
 
@@ -46,6 +45,16 @@ alert("Hello! This is an alert");
 //     <li>Item</li>  <!-- This was added after double-clicking -->
 //   </ol>
 
+
+function addItem() {
+    const ol = document.querySelector('list')
+    const newItem = document.createElemenet('li')
+
+    newItem.textContent = 'Item'
+    ol.appendChild(newItem)
+}
+
+
 /// TODO: replace this with your code
 
 // Change colors
@@ -56,6 +65,21 @@ alert("Hello! This is an alert");
 //
 // Clicking on "Turn Stuff Red" should make text red and clicking on "Turn
 // Stuff Blue" should make text blue.
+
+document.querySelector('#blue').addEventListener('click', function() {
+    changeTextColor('blue');
+});
+
+document.querySelector('#red').addEventListener('click', function() {
+    changeTextColor('red');
+});
+
+function changeTextColor(color) {
+    const elements = document.querySelectorAll('.changes-colors');
+    elements.forEach(element => {
+        element.style.color = color;
+    });
+}
 
 /// TODO: replace this with your code
 
