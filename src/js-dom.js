@@ -10,12 +10,15 @@
 
 const authButton = document.querySelector('#auth');
 authButton.addEventListener('click', function() {
-    if (authButton.textContent === 'Log In') {
-        authButton.textContent = 'Log Out';
+    if (authButton.innerText === 'Log In') {
+        authButton.innerText = 'Log Out';
     } else {
-        authButton.textContent = 'Log In';
+        authButton.innerText = 'Log In';
     }
+    console.log('Button text', authButton.innerText)
 });
+// The above code works on the webpage but not on the npm run test server?
+
 
 /// TODO: replace this with your code
 
@@ -26,8 +29,8 @@ authButton.addEventListener('click', function() {
 // A user should be able to enter what they want the alert to say in the
 // text box. Then, they can submit the form to trigger the alert.
 
+const alertMessage = document.querySelector('#alert-message')
 
-alert("Hello! This is an alert");
 /// TODO: replace this with your code
 
 // Add an item
@@ -47,8 +50,8 @@ alert("Hello! This is an alert");
 
 
 function addItem() {
-    const ol = document.querySelector('list')
-    const newItem = document.createElemenet('li')
+    const ol = document.querySelector('#list')
+    const newItem = document.createElement('li')
 
     newItem.textContent = 'Item'
     ol.appendChild(newItem)
@@ -98,6 +101,18 @@ function changeTextColor(color) {
 //   - calls your function that calculates a factorial
 //   - puts the result of the function inside the "result" span
 
+function calculateFactorial(number) {
+    if (number === 0 || number === 1) {
+        return 1
+    }
+    return number * calculateFactorial(number - 1)
+}
+
+document.querySelector('#factorial').addEventListener('submit', function(event) {
+
+})
+
+
 /// TODO: replace this with your code
 
 // Validate a form
@@ -116,3 +131,22 @@ function changeTextColor(color) {
 // change the color of the text to red..
 
 /// TODO: replace this with your code
+
+let form = document.querySelector('#recommend-word')
+let feedback = document.querySelector('.form-feedback')
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    let wordInput = document.querySelector('#word')
+    let wordLength = wordInput.value.trim().length;
+
+    if (wordLength >= 4) {
+        feedback.innerText = 'Thanks for your submission!';
+        feedback.style.color = 'green';
+    } else {
+        feedback.innerText = 'The word must be at least 4 characters long';
+        feedback.style.color = 'red'
+    }
+}
+)
