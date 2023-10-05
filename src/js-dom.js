@@ -135,10 +135,10 @@ document.querySelector('#factorial').addEventListener('submit', function(event) 
 let form = document.querySelector('#recommend-word')
 let feedback = document.querySelector('.form-feedback')
 
-form.addEventListener('submit', function(event) {
+form.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    let wordInput = document.querySelector('#word')
+    let wordInput = document.querySelector('#word');
     let wordLength = wordInput.value.trim().length;
 
     if (wordLength >= 4) {
@@ -148,5 +148,6 @@ form.addEventListener('submit', function(event) {
         feedback.innerText = 'The word must be at least 4 characters long';
         feedback.style.color = 'red'
     }
+    console.log('Word length:', wordLength);
 }
 )
