@@ -102,9 +102,25 @@ const EN_PIRATE_LOOKUP = {
   my: 'me',
   hotel: 'fleabag inn',
   hello: 'ahoy',
-};
+}
 
-function translateToPirateTalk(phrase) {}
+function translateToPirateTalk(phrase) {
+  const words = phrase.split(' ');
+
+  const translatedWords = words.map(word => {
+    if (EN_PIRATE_LOOKUP.hasOwnProperty(word)) {
+      return EN_PIRATE_LOOKUP[word];
+    } else {
+      return word;
+    }
+  });
+
+  const translatedPhrase = translatedWords.join(' ');
+
+  return translatedPhrase;
+}
+
+
 
 // Return the number of occurrences of each word in a string.
 // This function doesn't handle punctuation and is case-sensitive, so you can
