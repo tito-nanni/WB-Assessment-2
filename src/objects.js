@@ -129,7 +129,8 @@ function translateToPirateTalk(phrase) {
 // Ex.:
 //   wordCount('hello world')
 //   => { hello: 1, world: 1 }
-function wordCount(str) {}
+function wordCount(str) {
+}
 
 // Given an object representing a bug, return true if the given bug is
 // available in the given month.
@@ -151,7 +152,21 @@ function wordCount(str) {}
 //     }
 //   }, 1);
 //   => true
-function isBugAvailable(bug, month) {}
+function isBugAvailable(bug, month) {
+  return bug.availability.months.includes(month)
+}
+
+const bug = {
+  name: 'common butterfly',
+  availability: {
+    rarity: 'common',
+    months: [9, 10, 11, 12, 1, 2, 3, 4, 5, 6]
+  }
+}
+
+const givenMonth = 3
+
+console.log(isBugAvailable(bug, givenMonth))
 
 // Given an array of objects representing bugs, return an object that'll be
 // used to build a calendar. The keys of the object should be the months of the
